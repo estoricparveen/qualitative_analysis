@@ -22,7 +22,7 @@ initialize_nltk()
 # OpenAI API Function
 def process_with_openai(prompt, text, task):
     try:
-        client = openai.Client(api_key=st.session_state.api_key)
+        client = openai.OpenAI(api_key=st.session_state.api_key)
         response = client.chat.completions.create(
             model="gpt-4",
             messages=[
